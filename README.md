@@ -34,7 +34,7 @@ Every script is made by myself, arose out of necessity.. or because I found it i
 > \[**2024-09-24**\] Moved all this JavaScripts to my [new **`JavaScript`** repository](https://github.com/kekse1/javascript/).
 
 ### [`offset`.js](https://github.com/kekse1/utility/#offsetjs)
-**Moved** this one (only) to my [new **`utility`** repository](https://github.com/kekse1/utility/),
+**Moved** this one (only) to my [new **`utility`** repository](https://github.com/kekse1/utility/#offsetjs),
 since I found it to be too useful to get overlooked here (in this mass of any kind of script).
 
 ### [`clone`.js](src/clone.js)
