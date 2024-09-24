@@ -47,7 +47,7 @@ extensions are being fully cloned. And even the functions themselves (if `_funct
 `DEFAULT_CLONE_FUNCTION`).. and - utilizing a `Map` - every instance will only get cloned **once**, so
 **no circular dependencies** occure! **;-)**
 
-### `config`.js
+### [`config`.js](src/config.v0.7.0.js)
 * [Version **v0.7.0**](src/config.v0.7.0.js) (updated **2024-07-15**)
 * [Version **v0.4.0**](src/config.js) (updated **2024-06-26**)
 
