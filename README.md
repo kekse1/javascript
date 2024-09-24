@@ -35,7 +35,7 @@ Every script is made by myself, arose out of necessity.. or because I found it i
 
 ### [`offset`.js](https://github.com/kekse1/utility/#offsetjs)
 **Moved** this one (only) to my [new **`utility`** repository](https://github.com/kekse1/utility/#offsetjs),
-since I found it to be too useful to get overlooked here (in this mass of any kind of script).
+since I found it to be too useful to get overlooked here.
 
 ### [`clone`.js](src/clone.js)
 * [Version **v0.4.3**](src/clone.js) (updated **2024-05-09**)
