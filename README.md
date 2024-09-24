@@ -5,11 +5,11 @@
 2. [Scripts](#scripts)
 	* [`offset`.js](#offsetjs)
 	* [`clone`.js](#clonejs)
-	* [`links`.js](#linksjs)
 	* [`config`.js](#configjs)
 	* [`reflection`.js](#reflectionjs)
 	* [`intersect`.js](#intersectjs)
 	* [`multiset`.js](#multisetjs)
+	* [`links`.js](#linksjs)
 	* [`animation`.js](#animationjs)
 	* [`moon`.js](#moonjs)
 	* [`street-split`.js](#street-splitjs)
@@ -47,30 +47,6 @@ extensions are being fully cloned. And even the functions themselves (if `_funct
 `DEFAULT_CLONE_FUNCTION`).. and - utilizing a `Map` - every instance will only get cloned **once**, so
 **no circular dependencies** occure! **;-)**
 
-### [`links`.js](src/links.js)
-* [Version **v0.8.3**](src/links.js) (updated **2024-05-02**)
-
-This class extracts all links from `.html` files. It should work better than
-regular expressions, since it covers many possible codes. And this class should
-be instanciated, so it also works with file chunks (this way, the input data does
-not have to be complete, which is great for streams; also to save memory, etc.).
-
-And see the `DEFAULT_ATTRIBS = [ 'href', 'src' ];`; or maybe define a filter,
-like the `DEFAULT_SCHEME = [ 'http:', 'https:' ]`, so only these links will
-remain in the result array; you can also instanciate with a `source` param
-or attrib: from which URL this HTML document comes from, so the links are
-adapted to it (relative links could be a problem otherwise).
-
-Since **v0.4.0** also with `DEFAULT_UNIQUE = true`; extra `.extract()` function
-(original `.onData()` was meant for stream events); plus some improvements and
-bugs fixed. And more **big changes** since **v0.5.0**.
-
-PLUS: since **v0.8.0** it can extract ALL links, not only those from HTML codes;
-e.g. `text/plain`; BUT you need (beneath `.all` or `DEFAULT_ALL`) also at least
-one `.scheme[]` item..
-
-Nice one; have phun.
-
 ### `config`.js
 * [Version **v0.7.0**](src/config.v0.7.0.js) (updated **2024-07-15**)
 * [Version **v0.4.0**](src/config.js) (updated **2024-06-26**)
@@ -102,11 +78,29 @@ can start in a sub object).. and now, since **v0.6.0** I also support the
 'step-wise' traversing up the paths. So not only any chroot path, but **every**
 path item (see `Configuration.delim`)!
 
-**New** since **v0.7.0**: `path()` method. I'm using it to `path.join()` path items;
-I'm using `{ root }` path elements, to `chroot()` step-wise into them. Every parent
-root is `.resolve()`ing with configured sub directories to extend the `chroot()` to
-there. I just wanted to reproduce the whole path depth (by looking at the pure config),
-so I needed this `.path(_path)` method now. ...
+### [`links`.js](src/links.js)
+* [Version **v0.8.3**](src/links.js) (updated **2024-05-02**)
+
+This class extracts all links from `.html` files. It should work better than
+regular expressions, since it covers many possible codes. And this class should
+be instanciated, so it also works with file chunks (this way, the input data does
+not have to be complete, which is great for streams; also to save memory, etc.).
+
+And see the `DEFAULT_ATTRIBS = [ 'href', 'src' ];`; or maybe define a filter,
+like the `DEFAULT_SCHEME = [ 'http:', 'https:' ]`, so only these links will
+remain in the result array; you can also instanciate with a `source` param
+or attrib: from which URL this HTML document comes from, so the links are
+adapted to it (relative links could be a problem otherwise).
+
+Since **v0.4.0** also with `DEFAULT_UNIQUE = true`; extra `.extract()` function
+(original `.onData()` was meant for stream events); plus some improvements and
+bugs fixed. And more **big changes** since **v0.5.0**.
+
+PLUS: since **v0.8.0** it can extract ALL links, not only those from HTML codes;
+e.g. `text/plain`; BUT you need (beneath `.all` or `DEFAULT_ALL`) also at least
+one `.scheme[]` item..
+
+Nice one; have phun.
 
 ### [`reflection`.js](src/reflection.js)
 * [Version **v3.1.0**](src/reflection.js) (updated **2024-09-15**)
