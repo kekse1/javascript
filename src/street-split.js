@@ -2,10 +2,10 @@
 
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
- * https://kekse.biz/ https://github.com/kekse1/scripts/
+ * https://kekse.biz/ https://github.com/kekse1/javascript/
  * v0.2.0
  *
- * It's merely kinda proof of concept that state parsers can be as good as regular expressions, or even better; ;-D
+ * Merely kinda proof of concept that state parsers can be at least as good as regular expressions:
  * < https://www.php.de/forum/webentwicklung/php-einsteiger/1614566-stra%C3%9Fe-und-hausnummer-korrekt-trennen >
  * 
  */

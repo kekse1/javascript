@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
- * https://kekse.biz/ https://github.com/kekse1/scripts/
- * v0.4.0
+ * https://kekse.biz/ https://github.com/kekse1/javascript/
+ * v0.7.0
  *
  * Using a regular `.json` file/structure. But with improved handling.
  *
@@ -16,135 +16,564 @@
  * occurencies, if there's at least one (false) value. So you can 'globally' disable
  * smth., even if deeper occurencies enable smth. I needed/wanted this.
  * Now w/ `.enabled()` and `.disabled()`!
- *
- * The [delim] can be changed (defaults to `DEFAULT_DELIM`). On the bottom of this
- * file I also defined my `Math.getIndex(_index, _length)`, btw.
+ * 
+ * New since v0.6: Stepwise traverse up *any* path, not only the chroot's!
+ * New since v0.7: '.path()' method (example: nested root path directories).
  */
 
 //
 const DEFAULT_DELIM = '.';
 const DEFAULT_FORCE = false;
-const DEFAULT_ALL = true;
-const DEFAULT_THROW = true;
 const DEFAULT_RESET = false;
+const DEFAULT_COPY = true;
+
+//
+import path from 'node:path';
 
 //
 class Configuration
 {
 	constructor(... _args)
 	{
-		this.CONFIG = null;
+		this.parentConfig = null;
+		this.CONFIG = Object.create(null);
 
 		for(var i = 0; i < _args.length; ++i)
 		{
-			if(typeof _args[i] === 'string' && _args[i].length > 0)
-			{
-				this._delim = _args.splice(i--, 1)[0];
-			}
-			else if(typeof _args[i] === 'object' && _args[i] !== null)
+			if(object(_args[i]))
 			{
 				this.wrap(_args.splice(i--, 1)[0]);
 			}
 		}
 	}
 
-	static wrap(_object, ... _args)
+	static normalizePath(_path, _string = true)
 	{
-		if(typeof _object !== 'object' || _object === null)
+		if(array(_path, true))
 		{
-			if(DEFAULT_THROW)
+			if(_path.length === 0)
 			{
-				throw new Error('Invalid _object argument');
+				return (_string ? '' : _path);
 			}
 
-			return null;
+			var p = '';
+
+			for(var i = 0; i < _path.length; ++i)
+			{
+				if(string(_path[i], false))
+				{
+					p += _path[i] + Configuration.delim;
+				}
+			}
+
+			p = p.slice(0, -Configuration.delim.length);
+
+			if(!p)
+			{
+				return '';
+			}
+
+			_path = p;
+		}
+		else if(string(_path, true))
+		{
+			if(_path.length === 0)
+			{
+				return (_string ? '' : []);
+			}
+		}
+		else
+		{
+			return (_string ? '' : null);
 		}
 
-		return new Configuration(_object, ... _args);
-	}
+		_path = _path.split(Configuration.delim);
 
-	wrap(_object, _reset = DEFAULT_RESET)
-	{
-		if(typeof _object !== 'object' || _object === null)
+		for(var i = _path.length - 1; i >= 0; --i)
+		{
+			if(_path[i].length === 0)
+			{
+				_path.splice(i, 1);
+			}
+		}
+
+		if(_string)
+		{
+			return _path.join(Configuration.delim);
+		}
+		else if(_path.length === 0)
 		{
 			return null;
 		}
-		else if(_reset || typeof this.CONFIG !== 'object' || this.CONFIG === null)
+
+		return _path;
+	}
+
+	get chroot()
+	{
+		if(string(this._chroot, false))
+		{
+			return this._chroot;
+		}
+
+		return this._chroot = '';
+	}
+
+	set chroot(_value)
+	{
+		if(string(_value, false))
+		{
+			return this._chroot = Configuration.normalizePath(
+				_value, true);
+		}
+		else
+		{
+			delete this._chroot;
+		}
+
+		return this.chroot;
+	}
+
+	extend(_with)
+	{
+		if(!string(_with, false))
+		{
+			return this;
+		}
+
+		const result = new Configuration(this.parent());
+
+		result.CONFIG = this.CONFIG;
+		result.chroot = _with;
+		result.parentConfig = this;
+
+		return result;
+	}
+
+	getRootPath(_string = true)
+	{
+		const result = [];
+		var parent = this;
+
+		do
+		{
+			if(string(parent.chroot, false))
+			{
+				result.unshift(parent.chroot);
+			}
+
+			if(parent.parentConfig)
+			{
+				parent = parent.parentConfig;
+			}
+			else
+			{
+				break;
+			}
+		}
+		while(true);
+
+		if(result.length === 0)
+		{
+			return (_string ? '' : []);
+		}
+
+		return Configuration.normalizePath(result, _string);
+	}
+
+	tryRootPath(_value, _string = true)
+	{
+		if(bool(_value))
+		{
+			return (_value ? this.getRootPath(_string) : '');
+		}
+		else if(string(_value, true))
+		{
+			return Configuration.normalizePath(_value, _string);
+		}
+		
+		return '';
+	}
+
+	getPath(_path, _string = true, _with = true)
+	{
+		if(array(_path, true))
+		{
+			_path = _path.join(Configuration.delim);
+		}
+		else if(!string(_path, true))
+		{
+			return null;
+		}
+
+		var result;
+
+		if(bool(_with))
+		{
+			result = (_with ? this.getRootPath(true) : '');
+		}
+		else if(string(_with, false))
+		{
+			result = _with;
+		}
+		else
+		{
+			result = '';
+		}
+
+		if(string(_path, false))
+		{
+			if(result)
+			{
+				if(result === _path)
+				{
+					result = '';
+				}
+				else
+				{
+					result += Configuration.delim;
+				}
+			}
+
+			result += _path;
+		}
+
+		return Configuration.normalizePath(result, _string);
+	}
+
+	static get delim()
+	{
+		return DEFAULT_DELIM;
+	}
+
+	wrap(_object)
+	{
+		if(!this.CONFIG)
 		{
 			this.CONFIG = Object.create(null);
 		}
 
+		if(!object(_object))
+		{
+			return null;
+		}
+		
+		if(was(_object, 'Configuration'))
+		{
+			if(!object(_object = _object.CONFIG))
+			{
+				return null;
+			}
+		}
+
 		return Object.assign(this.CONFIG, _object);
 	}
-	
-	get delim()
-	{
-		if(typeof this._delim === 'string')
-		{
-			return this._delim;
-		}
-		
-		return DEFAULT_DELIM;
-	}
-	
-	set delim(_value)
-	{
-		if(typeof _value === 'string' && _value.length > 0)
-		{
-			return this._delim = _value;
-		}
-		
-		return this.delim;
-	}
 
-	force(_path)
+	static wrap(_object, _parent, ... _args)
 	{
-		if(!_path)
+		return new Configuration(_parent, _object, ... _args);
+	}
+	
+	load(... _args)
+	{
+		const callbacks = [];
+		var reset = DEFAULT_RESET;
+
+		for(var i = 0; i < _args.length; ++i)
 		{
-			if(typeof _path === 'string')
+			if(func(_args[i]))
 			{
-				return this.CONFIG;
+				callbacks.push(_args.splice(i--, 1)[0]);
+			}
+			else if(bool(_args[i]))
+			{
+				reset = _args.splice(i--, 1)[0];
+			}
+		}
+		
+		const callback = (_config, _data) => {
+			if(reset)
+			{
+				this.CONFIG = null;
 			}
 
+			this.wrap(_config);
+			
+			for(const cb of callbacks)
+			{
+				cb(this, _config, _data, reset);
+			}
+		};
+		
+		return Configuration.load(callback, ... _args);
+	}
+
+	fallback(_path, _func, ... _args)
+	{
+		const orig = _path;
+		_path = Configuration.normalizePath(_path, false);
+		
+		if(!_path || _path.length <= 0 || !string(_func, false))
+		{
 			return undefined;
 		}
-		
-		_path = _path.split(this.delim);
-		const last = _path.pop();
-		var ctx = this.CONFIG;
 
-		for(var i = 0; i < _path.length; ++i)
+		const test = (_p) => {
+			switch(_func)
+			{
+				case 'force':
+					if(typeof (r = this.force(_p, false)) !== 'undefined')
+						return r;
+					break;
+				case 'with':
+					if(this.with(_p, _args[0], false) === false)
+						return false;
+					break;
+				case 'get':
+					r = this.get(_p, _args[0], false);
+					if(int(_args[0]))
+					{
+						if(typeof r !== 'undefined')
+						{
+							return r;
+						}
+					}
+					else if(r.length > 0)
+					{
+						return r;
+					}
+					break;
+				case 'set':
+					if(this.set(_p, _args[0], false, false) === true)
+						return true;
+					break;
+				case 'has':
+					if(this.has(_p, false))
+						return true;
+					break;
+				case 'unset':
+					if(this.unset(_p, false))
+						return true;
+					break;
+				case 'path':
+					if(string(r = this.path(_p, false), false))
+						return r;
+					break;
+			}
+		};
+		
+		var p, c, r;
+		
+		for(var i = -1, j = 0; j < _path.length - 1; --i, ++j)
 		{
-			if(typeof ctx[_path[i]] !== 'object' || ctx[_path[i]] === null)
+			p = _path.slice(0, i).join(Configuration.delim);
+
+			for(var k = _path.length - j; k < _path.length; ++k)
 			{
-				return undefined;
-			}
-			else if(_path[i] in ctx)
-			{
-				ctx = ctx[_path[i]];
-			}
-			else
-			{
-				return undefined;
+				c = _path.slice(k, -1);
+				
+				if(c.length === 0)
+				{
+					c = '';
+				}
+				else
+				{
+					c = c.join(Configuration.delim) + Configuration.delim;
+				}
+				
+				c += _path[_path.length - 1];
+				c = p + Configuration.delim + c;
+
+				if(typeof (r = test(c)) !== 'undefined')
+				{
+					if(DEFAULT_COPY)
+					{
+						return Reflect.clone(r);
+					}
+
+					return r;
+				}
 			}
 		}
-
-		if(last in ctx)
+		
+		switch(_func)
 		{
-			return ctx[last];
+			case 'force':
+				if(this.isRootPath(_path))
+				{
+					if(DEFAULT_COPY)
+					{
+						return Reflect.clone(this.CONFIG);
+					}
+
+					return this.CONFIG;
+				}
+				break;
+			case 'with':
+				return true;
+			case 'get':
+				if(!int(_args[0]))
+					return [];
+				break;
+			case 'set':
+			case 'has':
+			case 'unset':
+				return false;
+			case 'path':
+				return '';
 		}
 
 		return undefined;
 	}
 
-	with(_path, _inverse = false)
+	isRootPath(_path)
+	{
+		_path = Configuration.normalizePath(_path, true);
+
+		if(_path === '')
+		{
+			return true;
+		}
+		else if(this.getRootPath(true) === _path)
+		{
+			return true;
+		}
+
+		return false;
+	}
+	
+	force(_path, _with = true)
 	{
 		if(!_path)
 		{
+			_path = '';
+		}
+
+		var orig = Configuration.normalizePath(_path, false);
+
+		if(!(_path = this.getPath(_path, false, _with)))
+		{
+			if(_with)
+			{
+				return this.fallback(orig, 'force');
+			}
+
+			return undefined;
+		}
+		else if(!_with && this.isRootPath(_path))
+		{
+			if(_with)
+			{
+				return this.force(this.getRootPath(), false);
+			}
+			else if(DEFAULT_COPY)
+			{
+				return Reflect.clone(this.CONFIG);
+			}
+
+			return this.CONFIG;
+		}
+
+		orig = [ ... _path ];
+		const last = _path.pop();
+		var ctx = this.CONFIG;
+
+		for(var i = 0; i < _path.length; ++i)
+		{
+			if(Reflect.isExtensible(ctx[_path[i]]))
+			{
+				ctx = ctx[_path[i]];
+			}
+			else
+			{
+				ctx = undefined;
+				break;
+			}
+		}
+
+		if(ctx && (last in ctx))
+		{
+			const r = ctx[last];
+
+			if(DEFAULT_COPY)
+			{
+				return Reflect.clone(r);
+			}
+
+			return r;
+		}
+		else if(_with)
+		{
+			return this.fallback(orig, 'force');
+		}
+
+		return undefined;
+	}
+
+	path(_path, _with = true)
+	{
+		var orig = Configuration.normalizePath(_path, false);
+		
+		if(!(_path = this.getPath(_path, false, _with)))
+		{
+			if(_with)
+			{
+				return this.fallback(orig, 'path');
+			}
+			
+			return '';
+		}
+
+		orig = [ ... _path ];
+		const last = _path.pop();
+		var ctx = this.CONFIG;
+		const result = [];
+
+		for(var i = 0, j = 0; i < _path.length; ++i)
+		{
+			if(string(ctx[last], false))
+			{
+				result[j++] = ctx[last];
+			}
+
+			if(Reflect.isExtensible(ctx[_path[i]]))
+			{
+				ctx = ctx[_path[i]];
+			}
+			else
+			{
+				break;
+			}
+		}
+		
+		if(string(ctx[last], false))
+		{
+			result.push(ctx[last]);
+		}
+		
+		if(result.length === 0)
+		{
+			return this.fallback(orig, 'path');
+		}
+
+		return path.join(... result);
+	}
+	
+	with(_path, _inverse = false, _with = true)
+	{
+		const orig = Configuration.normalizePath(_path, false);
+		
+		if(!(_path = this.getPath(_path, false, _with)))
+		{
+			if(_with)
+			{
+				return this.fallback(orig, 'with', _inverse);
+			}
+			
 			return undefined;
 		}
 
-		const cfg = this.get(_path, null);
+		const cfg = this.get(_path, null, _with);
 
 		if(cfg.length === 0)
 		{
@@ -158,65 +587,82 @@ class Configuration
 				return false;
 			}
 		}
-
+		
+		if(_with)
+		{
+			return this.fallback(orig, 'with', _inverse);
+		}
+		
 		return true;
 	}
 
-	enabled(_path)
+	enabled(_path, _with = true)
 	{
-		return this.with(_path, false);
+		return this.with(_path, false, _with);
+	}
+	
+	disabled(_path, _with = true)
+	{
+		return this.with(_path, true, _with);
 	}
 
-	disabled(_path)
+	get(_path, _index = -1, _with = true)
 	{
-		return this.with(_path, true);
-	}
-
-	get(_path, _index = -1)
-	{
-		if(!_path)
+		var orig = Configuration.normalizePath(_path, false);
+		
+		if(!(_path = this.getPath(_path, false, _with)))
 		{
-			if(typeof _path === 'string')
+			if(_with)
 			{
-				return this.CONFIG;
+				return this.fallback(orig, 'get', _index);
 			}
-
+			
 			return undefined;
 		}
-		else if(typeof _index !== 'number')
+
+		if(!int(_index))
 		{
 			_index = null;
 		}
 
-		_path = _path.split(this.delim);
+		orig = [ ... _path ];
 		const last = _path.pop();
 		var ctx = this.CONFIG;
-		const result = [];
+		var result = [];
 		
 		for(var i = 0, j = 0; i < _path.length; ++i)
 		{
-			if(typeof ctx[_path[i]] !== 'object' || ctx[_path[i]] === null)
-			{
-				break;
-			}
-			else if(last in ctx)
-			{
-				result[j++] = ctx[last];
-			}
-			
-			if(_path[i] in ctx)
+			if(Reflect.isExtensible(ctx[_path[i]]))
 			{
 				ctx = ctx[_path[i]];
 			}
 			else
 			{
+				ctx = undefined;
 				break;
 			}
 		}
 
-		if(last in ctx)
+		if(ctx && (last in ctx))
 		{
 			result.push(ctx[last]);
+		}
+
+		if(result.length === 0 && _with)
+		{
+			const res = this.fallback(orig, 'get', _index);
+
+			if(typeof res !== 'undefined')
+			{
+				if(_index === null)
+				{
+					result = res;
+				}
+				else
+				{
+					result = [ res ];
+				}
+			}
 		}
 
 		if(_index === null)
@@ -228,44 +674,61 @@ class Configuration
 			return undefined;
 		}
 
-		return result[Math.getIndex(_index, result.length)];
+		const item = result[Math.getIndex(_index, result.length)];
+
+		if(DEFAULT_COPY)
+		{
+			return Reflect.clone(item);
+		}
+
+		return item;
 	}
 	
-	set(_path, _value, _force = DEFAULT_FORCE)
+	set(_path, _value, _force = DEFAULT_FORCE, _with = true)
 	{
-		if(!_path)
+		var orig = Configuration.normalizePath(_path, false);
+		
+		if(!(_path = this.getPath(_path, false, _with)))
 		{
+			if(_with)
+			{
+				return this.fallback(orig, 'set', _value, _force);
+			}
+			
 			return undefined;
 		}
-		else if(typeof _value === 'undefined')
+		
+		if(undef(_value))
 		{
 			return this.unset(_path);
 		}
 
-		_path = _path.split(this.delim);
+		orig = [ ... _path ];
 		const last = _path.pop();
 		var ctx = this.CONFIG;
 
 		for(var i = 0; i < _path.length; ++i)
 		{
-			if(typeof ctx[_path[i]] !== 'object' || ctx[_path[i]] === null)
-			{
-				if(_force)
-				{
-					ctx = ctx[_path[i]] = {};
-				}
-				else
-				{
-					return false;
-				}
-			}
-			else if(_path[i] in ctx)
+			if(Reflect.isExtensible(ctx[_path[i]]))
 			{
 				ctx = ctx[_path[i]];
 			}
+			else if(_path[i] in ctx)
+			{
+				if(_force)
+				{
+					ctx = ctx[_path[i]] = Object.create(null);
+				}
+				else if(_with)
+				{
+					return this.fallback(orig, 'set', _value);
+				}
+				
+				return false;
+			}
 			else
 			{
-				ctx = ctx[_path[i]] = {};
+				ctx = ctx[_path[i]] = Object.create(null);
 			}
 		}
 
@@ -273,76 +736,88 @@ class Configuration
 		return true;
 	}
 	
-	has(_path, _all = DEFAULT_ALL)
+	has(_path, _with = true)
 	{
-		if(!_path)
+		var orig = Configuration.normalizePath(_path, false);
+		
+		if(!(_path = this.getPath(_path, false, _with)))
 		{
+			if(_with)
+			{
+				return this.fallback(orig, 'has');
+			}
+			
 			return undefined;
 		}
-		else if(_all)
-		{
-			return this.get(_path, null).length;
-		}
 
-		_path = _path.split(this.delim);
+		orig = [ ... _path ];		
 		const last = _path.pop();
 		var ctx = this.CONFIG;
 		
 		for(var i = 0; i < _path.length; ++i)
 		{
-			if(typeof ctx[_path[i]] !== 'object' || ctx[_path[i]] === null)
-			{
-				return false;
-			}
-			else if(_path[i] in ctx)
+			if(Reflect.isExtensible(ctx[_path[i]]))
 			{
 				ctx = ctx[_path[i]];
 			}
 			else
 			{
-				return false;
+				ctx = undefined;
+				break;
 			}
 		}
 
-		if(last in ctx)
+		if(ctx && (last in ctx))
 		{
 			return true;
 		}
-
+		else if(_with)
+		{
+			return this.fallback(orig, 'has');
+		}
+		
 		return false;
 	}
 
-	unset(_path)
+	unset(_path, _with = true)
 	{
-		if(!_path)
+		var orig = Configuration.normalizePath(_path, false);
+		
+		if(!(_path = this.getPath(_path, false, _with)))
 		{
+			if(_with)
+			{
+				return this.fallback(orig, 'unset');
+			}
+			
 			return undefined;
 		}
 
-		_path = _path.split(this.delim);
+		orig = [ ... _path ];
 		const last = _path.pop();
 		var ctx = this.CONFIG;
 
 		for(var i = 0; i < _path.length; ++i)
 		{
-			if(typeof ctx[_path[i]] !== 'object' || ctx[_path[i]] === null)
-			{
-				return false;
-			}
-			else if(_path[i] in ctx)
+			if(Reflect.isExtensible(ctx[_path[i]]))
 			{
 				ctx = ctx[_path[i]];
 			}
 			else
 			{
-				return false;
+				ctx = undefined;
+				break;
 			}
 		}
 
-		if(last in ctx)
+		if(ctx && (last in ctx))
 		{
 			delete ctx[last];
 			return true;
+		}
+		else if(_with)
+		{
+			return this.fallback(orig, 'unset');
 		}
 
 		return false;
@@ -352,17 +827,4 @@ class Configuration
 export default Configuration;
 
 //
-Reflect.defineProperty(Math, 'getIndex', { value: (_index, _length) => {
-	if(_length < 1)
-	{
-		return null;
-	}
-	else if((_index %= _length) < 0)
-	{
-		_index = ((_length + _index) % _length);
-	}
-	
-	return (_index || 0);
-}});
 
-//

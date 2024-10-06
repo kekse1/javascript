@@ -47,15 +47,14 @@ extensions are being fully cloned. And even the functions themselves (if `_funct
 `DEFAULT_CLONE_FUNCTION`).. and - utilizing a `Map` - every instance will only get cloned **once**, so
 **no circular dependencies** occure! **;-)**
 
-### [`config`.js](src/config.v0.7.0.js)
-* [Version **v0.7.0**](src/config.v0.7.0.js) (updated **2024-07-15**)
-* [Version **v0.4.0**](src/config.js) (updated **2024-06-26**)
+### [`config`.js](src/config.js)
+* [Version **v0.7.0**](src/config.js) (updated **2024-07-15**)
 
 Using a regular `.json` file/structure. But with improved handling.
 
 > [!IMPORTANT]
-> The **v0.7.0** isn't runnable in a regular JavaScript environment,
-> because it's using extensions I've only got in my own code.
+> It ain't runnable in a regular JavaScript environment,
+> since it's using extensions I've only got in my own code.
 > **But** the algorithms and structures should be correct and
 > clear when you are looking in the code for yourself.
 

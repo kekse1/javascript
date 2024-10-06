@@ -1,6 +1,6 @@
 //
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
-// https://kekse.biz/ https://github.com/kekse1/scripts/
+// https://kekse.biz/ https://github.com/kekse1/javascript/
 // v0.2.2
 //
 // Intersection for Arrays.
@@ -10,7 +10,7 @@
 // occurences (if no (true) is in your arguments).
 //
 // Depends on my `MultiSet`:
-// https://github.com/kekse1/scripts/blob/master/js/multiset.js
+// https://github.com/kekse1/javascript/#multisetjs
 //
 
 //
@@ -50,3 +50,4 @@ Reflect.defineProperty(Array.prototype, 'unique', { value: function()
 }});
 
 //
+

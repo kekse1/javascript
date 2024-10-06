@@ -1,6 +1,6 @@
 //
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
-// https://kekse.biz/ https://github.com/kekse1/scripts/
+// https://kekse.biz/ https://github.com/kekse1/javascript/
 // v3.1.0
 //
 // The problem was: depending on your JavaScript *environment*, which also changes
