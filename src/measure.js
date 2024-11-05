@@ -1,11 +1,16 @@
 // 
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
 // https://kekse.biz/ https://github.com/kekse1/javascript/
+<<<<<<< HEAD
 // v0.2.0
+=======
+// v0.1.1
+>>>>>>> 01ae181cdd9b4bbd3cbe33b1b9d13e853ea34c16
 // 
 // Two functions to measure the throughput of your data, in
-// bytes per millisecond; and the ETA ('Estimated Time Of
-// Arrival'), in milliseconds (multiply with 1000 for seconds).
+// bytes per second (for milliseconds remove the multiplication
+// with 1000); and the ETA ('Estimated Time Of Arrival'), in
+// milliseconds (multiply with 1000 for seconds).
 // 
 
 //
