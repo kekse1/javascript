@@ -18,7 +18,7 @@
 5. [Copyright and License](#copyright-and-license)
 
 ## News
-* \[**2024-11-04**\] Created the [**`measure`.js**](#measurejs), **v0.1.0**;
+* \[**2024-11-04**\] Updated the new [**`measure`.js**](#measurejs) to **v0.1.1**;
 * \[**2024-09-24**\] **Moved** the [**`offset`.js**](#offsetjs) script to my [new **`utilities`** repository](https://github.com/kekse1/utilities/);
 * \[**2024-09-24**\] Created this repository, to move only the JavaScripts from my [**`scripts` repository**](https://github.com/kekse1/scripts/) to here.
 
@@ -136,11 +136,11 @@ My `MultiSet` class: extends `Map`, but works like a `Set`, with the difference
 that it also counts the amount of items in this set.
 
 ### [`measure`.js](src/measure.js)
-* [Version **v0.1.0**](src/measure.js) (created **2024-11-04**)
+* [Version **v0.1.1**](src/measure.js) (updated **2024-11-05**)
 
-Two functions to measure the **throughput** of your data, in bytes per millisecond;
-and the **ETA** ('Estimated Time Of Arrival'), in milliseconds (multiply with 1000
-for seconds).
+Two functions to measure the **throughput** of your data, in bytes per second (just
+remove the multiplication with 1000 für milliseconds); and the **ETA** ('Estimated
+Time Of Arrival'), in milliseconds (multiply with 1000 for seconds).
 
 ### [`animation`.js](https://github.com/kekse1/v4/blob/git/src/web/animation.js)
 This is just a link to the only [`animation`.js](https://github.com/kekse1/v4/blob/git/src/web/animation.js) of my
