@@ -12,13 +12,13 @@
 //
 const measure = {};
 
-measure.throughput = (_time, _size) => {
+measure.throughput = (_size, _time) => {
 	if(typeof _size === 'bigint') _size = Number(_size);
 	if(typeof _time === 'bigint') _time = Number(_time / 1000000n);
 	if(_size <= 0 || _time <= 0) return 0;
 	return Math.max(0, (_size / _time * 1000)); };
 
-measure.estimated = (_time, _size, _rest) => {
+measure.estimated = (_rest, _size, _time) => {
 	if(typeof _size === 'bigint') _size = Number(_size);
 	if(typeof _time === 'bigint') _time = Number(_time / 1000000n);
 	if(typeof _rest === 'bigint') _rest = Number(_rest);
