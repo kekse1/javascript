@@ -13,11 +13,13 @@
 	* [`measure`.js](#measurejs)
 	* [`animation`.js](#animationjs)
 	* [`moon`.js](#moonjs)
+    * [`fill`.js](#filljs)
 	* [`street-split`.js](#street-splitjs)
 	* [`fold.css`.js](#foldcssjs)
 5. [Copyright and License](#copyright-and-license)
 
 ## News
+* \[**2024-11-21**\] New [**`fill`.js**](#filljs), **v0.0.1**;
 * \[**2024-11-05**\] Updated the new [**`measure`.js**](#measurejs) to **v0.2.1**;
 * \[**2024-09-24**\] **Moved** the [**`offset`.js**](#offsetjs) script to my [new **`utilities`** repository](https://github.com/kekse1/utilities/);
 * \[**2024-09-24**\] Created this repository, to move only the JavaScripts from my [**`scripts` repository**](https://github.com/kekse1/scripts/) to here.
@@ -160,6 +162,13 @@ Extends the `Date` object with moon phase calculation functions.
 For even more, partially very useful `Date` extensions take a look (for docs and concrete code):
 * [**v4**/docs (...)](https://github.com/kekse1/v4/blob/git/docs/modules/lib/date.md)
 * [`date.js`](https://github.com/kekse1/v4/blob/git/js/lib/globals/date.js)
+
+### [`fill`.js](src/fill.js)
+I'm a bit embarrassed about this script - it's just to tiny and nothing.
+
+* [Version **v0.0.1**](src/fill.js) (created **2024-11-21**)
+
+But I really needed it one time. Read the description in the comment on top of this script.
 
 ### [`street-split`.js](src/street-split.js)
 * [Version **v0.2.0**](src/street-split.js) (updated **2024-06-03**)
