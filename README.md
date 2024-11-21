@@ -172,7 +172,7 @@ I'm a bit embarrassed about this script - it's just to tiny and nothing.
 
 * [Version **v0.0.1**](src/fill.js) (created **2024-11-21**)
 
-But I really needed it one time. Read the description in the comment on top of this script.
+But I really needed it one time. Read the description in the comment on top of this file.
 
 ### [`street-split`.js](src/street-split.js)
 * [Version **v0.2.0**](src/street-split.js) (updated **2024-06-03**)
