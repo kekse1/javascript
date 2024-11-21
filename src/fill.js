@@ -3,7 +3,7 @@
 //
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
 // https://kekse.biz/ https://github.com/kekse1/javascript/
-// v0.0.1
+// v0.0.2
 //
 // *REALLY* tiny script.. I needed it because "there's no
 // `/dev/byte`" or so, to be used via the `dd` utility...
@@ -12,8 +12,9 @@
 //
 // So, argue with your wished target length and as many
 // parameters you wish: either strings or integers, which
-// we'll use here with `String.fromCodePoint()`. Many
-// parameters are concatenated.
+// we'll use here with `String.fromCodePoint()`.
+//
+// More than one parameter causes concatenation.
 //
 
 var length = process.argv[2];
@@ -40,7 +41,7 @@ for(var i = 3; i < process.argv.length; ++i)
 	}
 	else
 	{
-		fill += String.fromCodePoint(Number(process.argv[i]));
+		fill += String.fromCharCode(Math.floor(Math.abs(Number(process.argv[i]))) % 256);
 	}
 }
 
@@ -50,8 +51,16 @@ if(!fill)
 	process.exit(3);
 }
 
-for(var i = 0; i < length; ++i)
+var data = new Uint8Array(fill.length);
+for(var i = 0; i < fill.length; ++i) data[i] = fill.charCodeAt(i);
+
+var diff; for(var i = 0; i < length; i += data.length)
 {
-	process.stdout.write(fill[i % fill.length]);
+	if((diff = (length - data.length)) < data.length)
+	{
+		data = data.slice(0, diff);
+	}
+
+	process.stdout.write(data);
 }
 
