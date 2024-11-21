@@ -19,11 +19,8 @@
 5. [Copyright and License](#copyright-and-license)
 
 ## News
-<<<<<<< HEAD
 * \[**2024-11-21**\] New [**`fill`.js**](#filljs), **v0.0.1**;
-=======
 * \[**2024-11-14**\] Updated [**`clone.js`**](#clonejs); ... **v0.5.0**;
->>>>>>> 73cdadf1f5b563f3cac5beadeb2679b91f2120ee
 * \[**2024-11-05**\] Updated the new [**`measure`.js**](#measurejs) to **v0.2.1**;
 * \[**2024-09-24**\] **Moved** the [**`offset`.js**](#offsetjs) script to my [new **`utilities`** repository](https://github.com/kekse1/utilities/);
 * \[**2024-09-24**\] Created this repository, to move only the JavaScripts from my [**`scripts` repository**](https://github.com/kekse1/scripts/) to here.
