@@ -19,8 +19,8 @@
 5. [Copyright and License](#copyright-and-license)
 
 ## News
+* \[**2024-11-25**\] Updated [**`clone`.js**](#clonejs), **v0.5.1**;
 * \[**2024-11-21**\] New [**`fill`.js**](#filljs), **v0.0.2**;
-* \[**2024-11-14**\] Updated [**`clone.js`**](#clonejs); ... **v0.5.0**;
 * \[**2024-11-05**\] Updated the new [**`measure`.js**](#measurejs) to **v0.2.1**;
 * \[**2024-09-24**\] **Moved** the [**`offset`.js**](#offsetjs) script to my [new **`utilities`** repository](https://github.com/kekse1/utilities/);
 * \[**2024-09-24**\] Created this repository, to move only the JavaScripts from my [**`scripts` repository**](https://github.com/kekse1/scripts/) to here.
@@ -41,7 +41,7 @@ Every script is made by myself, arose out of necessity.. or because I found it i
 since I found it to be too useful to get overlooked here.
 
 ### [`clone`.js](src/clone.js)
-* [Version **v0.5.0**](src/clone.js) (updated **2024-11-14**)
+* [Version **v0.5.1**](src/clone.js) (updated **2024-11-25**)
 
 My `Reflect.clone()` extension (because JavaScript doesn't include it natively)..
 
