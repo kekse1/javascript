@@ -10,15 +10,17 @@
 	* [`reflection`.js](#reflectionjs)
 	* [`intersect`.js](#intersectjs)
 	* [`multiset`.js](#multisetjs)
+	* [`escaping`.js](#escapingjs)
 	* [`measure`.js](#measurejs)
 	* [`animation`.js](#animationjs)
 	* [`moon`.js](#moonjs)
-    * [`fill`.js](#filljs)
+	* [`fill`.js](#filljs)
 	* [`street-split`.js](#street-splitjs)
 	* [`fold.css`.js](#foldcssjs)
 5. [Copyright and License](#copyright-and-license)
 
 ## News
+* \[**2024-11-26**\] Created [**`escaping`.js**](#escapingjs), **v0.2.0**;
 * \[**2024-11-26**\] Update [**`fill`.js**](#filljs) to **v0.1.0**;
 * \[**2024-11-25**\] Updated [**`clone`.js**](#clonejs), **v0.5.1**;
 * \[**2024-11-05**\] Updated the new [**`measure`.js**](#measurejs) to **v0.2.1**;
@@ -140,6 +142,16 @@ is in your arguments).
 
 My `MultiSet` class: extends `Map`, but works like a `Set`, with the difference
 that it also counts the amount of items in this set.
+
+### [`escaping`.js](src/escaping.js)
+String extensions to support C escaping. Example given `\n` as newline character.
+
+* [Version **v0.2.0**](src/escaping.js) (created **2024-11-26**)
+
+Supports both escaping and unescaping. The latter will
+produce strings with the encoded values, so `\n` will
+become a real newline byte, and the first one will
+encode `\n` out of the `\10` byte code.
 
 ### [`measure`.js](src/measure.js)
 * [Version **v0.2.1**](src/measure.js) (updated **2024-11-05**)
