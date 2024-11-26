@@ -36,8 +36,9 @@ TODAY, in the times of [`Node.js`](https://nodejs.org/), it's a great language, 
 
 Every script is made by myself, arose out of necessity.. or because I found it interesting.
 
-> [!IMPORTANT]
-> \[**2024-09-24**\] Moved all this JavaScripts to my [new **`JavaScript`** repository](https://github.com/kekse1/javascript/).
+> [!NOTE]
+> \[**2024-09-24**\] Moved all this JavaScripts to my new [`JavaScript`](https://github.com/kekse1/javascript/)
+> repo, from the original [`scripts`](https://github.com/kekse1/scripts/);
 
 ### [`dump`.js](https://github.com/kekse1/dump/)
 Got it's own [repository](https://github.com/kekse1/dump/)
