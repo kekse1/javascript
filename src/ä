@@ -18,8 +18,7 @@
 //
 // UPDATE (v0.1.0): Bytes are encoded with '\' prefix now
 // (with decimal base number, range 0-255); and you can
-// escape the slash via '\\'. Even if I wonder why this
-// was so tricky this time.. I really used to do it better..
+// escape the slash via '\\'.
 //
 
 var length = process.argv[2];
@@ -43,36 +42,37 @@ for(var i = 3; i < process.argv.length; ++i)
 {
 	for(var j = 0; j < process.argv[i].length; ++j)
 	{
-		if(byte !== null)
+		if(process.argv[i][j] === '\\' && byte === null)
+		{
+			byte = '';
+		}
+		else if(byte !== null)
 		{
 			nan = isNaN(process.argv[i][j]);
 
+			if(!nan)
+			{
+				byte += process.argv[i][j];
+			}
+			
 			if(nan || byte.length === 3)
 			{
 				if(byte.length > 0)
 				{
 					fill += String.fromCharCode(Number(byte) % 256);
 				}
-				else if(process.argv[i][j] !== '\\')
+				else
 				{
-					fill += '\\';
-				}
-
-				if(nan)
-				{
-					fill += process.argv[i][j];
+					fill += ;
 				}
 
 				byte = null;
 			}
-			else
+			
+			if(nan)
 			{
-				byte += process.argv[i][j];
+				fill += process.argv[i][j];
 			}
-		}
-		else if(process.argv[i][j] === '\\')
-		{
-			byte = '';
 		}
 		else
 		{
@@ -93,14 +93,24 @@ if(byte !== null)
 	}
 }
 
+console.dir({fill});process.exit(1);
+
 if(!fill)
 {
 	console.error('Missing parameter(s) (fill pad string(s) or integer(s))');
 	process.exit(3);
 }
 
-for(var i = 0; i < length; ++i)
+var data = new Uint8Array(fill.length);
+for(var i = 0; i < fill.length; ++i) data[i] = fill.charCodeAt(i);
+
+var diff; for(var i = 0; i < length; i += data.length)
 {
-	process.stdout.write(fill[i % fill.length]);
+	if((diff = (length - data.length)) < data.length)
+	{
+		data = data.slice(0, diff);
+	}
+
+	process.stdout.write(data);
 }
 
