@@ -144,7 +144,8 @@ My `MultiSet` class: extends `Map`, but works like a `Set`, with the difference
 that it also counts the amount of items in this set.
 
 ### [`escaping`.js](src/escaping.js)
-String extensions to support C escaping. Example given `\n` as newline character.
+String extensions to support C {un,}escaping.
+Example given `\n` is the newline character.
 
 * [Version **v0.2.0**](src/escaping.js) (created **2024-11-26**)
 

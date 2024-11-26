@@ -3,8 +3,8 @@
  * https://kekse.biz/ https://github.com/kekse1/javascript/
  * v0.2.0
  *
- * String extensions to support C escaping. Example given
- * `\n` as newline character.
+ * String extensions to support C {un,}escaping. Example given
+ * `\n` is the newline character.
  *
  * Supports both escaping and unescaping. The latter will
  * produce strings with the encoded values, so `\n` will
