@@ -43,7 +43,7 @@ Every script is made by myself, arose out of necessity.. or because I found it i
 ### [`dump`.js](https://github.com/kekse1/dump/)
 Got it's own [repository](https://github.com/kekse1/dump/)
 
-### [`offset`.js](https://github.com/kekse1/utilities/#offsetjs)
+### [`offset`.js](src/offset.js)
 With this script, you can calculate and convert between offsets and lines with columns,
 or count them, etc. Without any parameter it'll show you the whole countings, and with
 another parameter combination you can even get to know how many columns a specific line has.
