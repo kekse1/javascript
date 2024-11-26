@@ -152,7 +152,7 @@ Example given `\n` is the newline character.
 Supports both escaping and unescaping. The latter will
 produce strings with the encoded values, so `\n` will
 become a real newline byte, and the first one will
-encode `\n` out of the `\10` byte code.
+encode the string `\n` out of the `\10` byte code.
 
 ### [`measure`.js](src/measure.js)
 * [Version **v0.2.1**](src/measure.js) (updated **2024-11-05**)

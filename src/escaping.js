@@ -9,7 +9,7 @@
  * Supports both escaping and unescaping. The latter will
  * produce strings with the encoded values, so `\n` will
  * become a real newline byte, and the first one will
- * encode `\n` out of the `\10` byte code.
+ * encode the string `\n` out of the `\10` byte code.
  *
  * This will implement/extend globally (String.prototype),
  * so you don't need to import it twice (but checks it).
