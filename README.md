@@ -168,7 +168,7 @@ For even more, partially very useful `Date` extensions take a look (for docs and
 * [`date.js`](https://github.com/kekse1/v4/blob/git/js/lib/globals/date.js)
 
 ### [`fill`.js](src/fill.js)
-I'm a bit embarrassed about this script - it's just to tiny and nothing.
+I'm a bit embarrassed about this script - it's just so really tiny and nothing..
 
 * [Version **v0.1.0**](src/fill.js) (updated **2024-11-26**)
 
