@@ -19,7 +19,7 @@
 // UPDATE (v0.1.0): Bytes are encoded with '\' prefix now
 // (with decimal base number, range 0-255); and you can
 // escape the slash via '\\'. Even if I wonder why this
-// was so tricky this time.. I really used to do it better..
+// was so tricky this time.. I used to make this better.
 //
 
 var length = process.argv[2];
