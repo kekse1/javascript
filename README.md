@@ -3,6 +3,7 @@
 ## Index
 1. [News](#news)
 2. [Scripts](#scripts)
+    * [`dump`](#dump)
 	* [`offset`.js](#offsetjs)
 	* [`clone`.js](#clonejs)
 	* [`config`.js](#configjs)
@@ -38,9 +39,18 @@ Every script is made by myself, arose out of necessity.. or because I found it i
 > [!IMPORTANT]
 > \[**2024-09-24**\] Moved all this JavaScripts to my [new **`JavaScript`** repository](https://github.com/kekse1/javascript/).
 
+### [`dump`.js](https://github.com/kekse1/dump/)
+Got it's own [repository](https://github.com/kekse1/dump/)
+
 ### [`offset`.js](https://github.com/kekse1/utilities/#offsetjs)
-**Moved** this one (only) to my [new **`utilities`** repository](https://github.com/kekse1/utilities/#offsetjs),
-since I found it to be too useful to get overlooked here.
+With this script, you can calculate and convert between offsets and lines with columns,
+or count them, etc. Without any parameter it'll show you the whole countings, and with
+another parameter combination you can even get to know how many columns a specific line has.
+
+* [Version **v1.0.2**](src/offset.js) (updated **2024-10-06**)
+
+> [!TIP]
+> Start with the argv parameter `--help` or `-?`. ;-)
 
 ### [`clone`.js](src/clone.js)
 * [Version **v0.5.1**](src/clone.js) (updated **2024-11-25**)
