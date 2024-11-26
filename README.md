@@ -174,7 +174,7 @@ I'm a bit embarrassed about this script - it's just so really tiny and nothing..
 
 But I really needed it one time. Read the description in the comment on top of this file.
 
-> [!INFO]
+> [!NOTE]
 > Now (**v0.1.0**) parsing bytes with slash `\` prefix instead of
 > only looking for decimals.
 
