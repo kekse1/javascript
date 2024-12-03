@@ -55,9 +55,8 @@ if(typeof BigInt.fromBytes === 'undefined')
 		}
 
 		var result = 0n;
-		var mul = 1n;
 
-		for(var i = array.length - 1; i >= 0; --i, mul *= 256n)
+		for(var i = array.length - 1, mul = 1n; i >= 0; --i, mul *= 256n)
 		{
 			result += (mul * BigInt(array[i]));
 		}
