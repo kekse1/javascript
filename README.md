@@ -8,6 +8,7 @@
 	* [`clone`.js](#clonejs)
 	* [`config`.js](#configjs)
 	* [`links`.js](#linksjs)
+    * [`bytes`.js](#bytesjs)
 	* [`reflection`.js](#reflectionjs)
 	* [`intersect`.js](#intersectjs)
 	* [`multiset`.js](#multisetjs)
@@ -21,6 +22,7 @@
 5. [Copyright and License](#copyright-and-license)
 
 ## News
+* \[**2024-12-03**\] Created [**`bytes`.js**](#bytesjs), **v0.1.0**;
 * \[**2024-11-26**\] Created [**`escaping`.js**](#escapingjs), **v0.2.0**;
 * \[**2024-11-26**\] Update [**`fill`.js**](#filljs) to **v0.1.0**;
 * \[**2024-11-25**\] Updated [**`clone`.js**](#clonejs), **v0.5.1**;
@@ -119,6 +121,17 @@ e.g. `text/plain`; BUT you need (beneath `.all` or `DEFAULT_ALL`) also at least
 one `.scheme[]` item..
 
 Nice one; have phun.
+
+### [`bytes`.js](src/bytes.js)
+* [Version **v0.1.0**](src/bytes.js) (created **2024-12-03**)
+
+This is radix/base conversion, but only for bytecode (so
+radix/base 256). Here's only the BigInt part, for regular
+Integers you could change it a bit, or you use the 'power'
+of Typed Arrays (which I don't like that much..).
+
+You could use it for more efficient encoding of numbers,
+on disk or via network transmission, etc.
 
 ### [`reflection`.js](src/reflection.js)
 * [Version **v3.1.0**](src/reflection.js) (updated **2024-09-15**)
