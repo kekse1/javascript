@@ -3,7 +3,7 @@
 //
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
 // https://kekse.biz/ https://github.com/kekse1/javascript/
-// v0.1.0
+// v0.1.1
 //
 // *REALLY* tiny script.. I needed it because "there's no
 // `/dev/byte`" or so, to be used via the `dd` utility...
@@ -101,6 +101,6 @@ if(!fill)
 
 for(var i = 0; i < length; ++i)
 {
-	process.stdout.write(fill[i % fill.length]);
+	process.stdout.write(Uint8Array.from([ fill.charCodeAt(i % fill.length) ]));
 }
 
