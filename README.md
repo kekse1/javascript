@@ -17,13 +17,13 @@
 	* [`animation`.js](#animationjs)
 	* [`moon`.js](#moonjs)
 	* [`fill`.js](#filljs)
-	* [`chess-map`.js](#chess-mapjs)
+	* [`chess`.js](#chessjs)
 	* [`street-split`.js](#street-splitjs)
 	* [`fold.css`.js](#foldcssjs)
 5. [Copyright and License](#copyright-and-license)
 
 ## News
-* \[**2024-12-24**\] Uploaded my [**`chess-map`.js**](#chess-mapjs), **v0.2.1**;
+* \[**2024-12-24**\] Uploaded my [**`chess`.js**](#chessjs), **v0.2.1**;
 * \[**2024-12-13**\] Updated [**`fill`.js**](#filljs), now **v0.1.1**;
 * \[**2024-12-03**\] Created [**`bytes`.js**](#bytesjs), **v0.1.0**;
 * \[**2024-11-26**\] Created [**`escaping`.js**](#escapingjs), **v0.2.0**;
@@ -213,13 +213,13 @@ I'm a bit embarrassed about this script - it's just so really tiny and nothing..
 
 But I really needed it one time. Read the description in the comment on top of this file.
 
-### [`chess-map`.js](src/chess-map.js)
+### [`chess`.js](src/chess.js)
 Little '**toy**'! "Maps" some counted values in a coordinate system,
 so it **draws kinda chess board** .. in your **console**/**terminal**! ;-)
 
-* [Version **v0.2.1**](src/chess-map.js) (uploaded **2024-12-24**);
+* [Version **v0.2.1**](src/chess.js) (uploaded **2024-12-24**);
 
-![`example()`](img/chess-map.png)
+![`example()`](img/chess.png)
 
 **DEPENDS** on my own library, so you've to adapt this script for your own!
 
