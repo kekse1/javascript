@@ -223,6 +223,8 @@ Please just try it out, or think for yourself what it does.. it's christmas,
 and I've to be fast right now.. **DEPENDS** on my own library, so you've to
 adapt this script for your own..!
 
+![`example()` output](img/map.png)
+
 ### [`street-split`.js](src/street-split.js)
 * [Version **v0.2.0**](src/street-split.js) (updated **2024-06-03**)
 
