@@ -56,6 +56,9 @@ map.draw = () => {
 			v = ' ' + array[x + (256 * y)].toString().
 				padStart(maxValue, ' ') + ' ';
 
+			// 
+			// chess.
+			// 
 			if(((x + y) % 2) === 0)
 			{
 				v = v.fg(255, 255, 255, true).
