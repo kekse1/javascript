@@ -20,15 +20,15 @@
  */
 
 //
-const WIDTH = 32;
-const HEIGHT = 32;
+const MAX_WIDTH = 32;
+const MAX_HEIGHT = 32;
 
 const array = new Uint8Array(256 * 256);
 var maxValue = 0;
 var maxX = 0;
 var maxY = 0;
 
-const map = (_x, _y, _add = 1, _w = WIDTH, _h = HEIGHT) => {
+const map = (_x, _y, _add = 1, _w = MAX_WIDTH, _h = MAX_HEIGHT) => {
 	_x %= _w; _y %= _h;
 	array[_x + (256 * _y)] += _add;
 	const len = array[_x + (256 * _y)].toString().length;
