@@ -60,7 +60,7 @@ map.draw = () => {
 			// 
 			// chess.
 			// 
-			if(((x + y) % 2) === 0)
+			if((x + y) % 2)
 			{
 				v = v.fg(255, 255, 255, true).
 					bg(0, 0, 0, true);
