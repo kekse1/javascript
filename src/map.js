@@ -15,7 +15,8 @@
  * it does.. it's christmas, and I've to be fast now..
  *
  * DEPENDS on my own library, so you've to adapt this
- * script for your own..!
+ * script for your own..! And please make comment signs
+ * on the bottom function call "example()".
  *
  */
 
@@ -109,6 +110,5 @@ const example = () => {
 };
 
 //
-//example();
-
+example();
 
