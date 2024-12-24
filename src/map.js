@@ -3,7 +3,7 @@
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
  * https://norbert.com.es/
- * v0.2.0
+ * v0.2.1
  *
  * Little toy! ^_^
  *

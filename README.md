@@ -23,7 +23,7 @@
 5. [Copyright and License](#copyright-and-license)
 
 ## News
-* \[**2024-12-24**\] Uploaded my [**`map`.js**](#mapjs), **v0.2.0**;
+* \[**2024-12-24**\] Uploaded my [**`map`.js**](#mapjs), **v0.2.1**;
 * \[**2024-12-13**\] Updated [**`fill`.js**](#filljs), now **v0.1.1**;
 * \[**2024-12-03**\] Created [**`bytes`.js**](#bytesjs), **v0.1.0**;
 * \[**2024-11-26**\] Created [**`escaping`.js**](#escapingjs), **v0.2.0**;
@@ -217,7 +217,7 @@ But I really needed it one time. Read the description in the comment on top of t
 Little '**toy**'! "Maps" some counted values in a coordinate system,
 so it draws kinda chess board ... in your **console**/**terminal**! ;-)
 
-* [Version **v0.2.0**](src/map.js) (uploaded **2024-12-24**);
+* [Version **v0.2.1**](src/map.js) (uploaded **2024-12-24**);
 
 ![`example()`](img/map.png)
 
