@@ -215,7 +215,7 @@ But I really needed it one time. Read the description in the comment on top of t
 
 ### [`map`.js](src/map.js)
 Little '**toy**'! "Maps" some counted values in a coordinate system,
-so it draws kinda chess board..
+so it draws kinda chess board ... in your **console**/**terminal**! ;-)
 
 * [Version **v0.2.0**](src/map.js) (uploaded **2024-12-24**);
 

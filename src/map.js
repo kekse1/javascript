@@ -8,9 +8,11 @@
  * Little toy! ^_^
  *
  * "Maps" some counted values in a coordinate system,
- * so it draws kinda chess board.. please just try it
- * out, or think for yourself what it does.. it's
- * christmas, and I've to be fast now.. ^_^
+ * so it draws kinda chess board ... in your console/
+ * terminal! ;-)
+ *
+ * please just try it out, or think for yourself what
+ * it does.. it's christmas, and I've to be fast now..
  *
  * DEPENDS on my own library, so you've to adapt this
  * script for your own..!
