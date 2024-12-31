@@ -313,7 +313,7 @@ but the code is/was a mess!
 The Copyright is [(c) Sebastian Kucharczyk](./COPYRIGHT.txt),
 and it's licensed under the [MIT](./LICENSE.txt) (also known as 'X' or 'X11' license).
 
-<a href="favicon.512px.png" target="_blank">
+<a href="https://kekse.biz/">
 <img src="favicon.png" alt="Favicon" />
 </a>
 
