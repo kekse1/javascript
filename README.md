@@ -1,4 +1,4 @@
-<img src="https://kekse.biz/github.php?draw&override=github:javascript" />
+<img src="https://kekse.biz/github.php?draw&override=github:javascripts" />
 
 ## Index
 1. [News](#news)
@@ -20,7 +20,7 @@
 	* [`chess`.js](#chessjs)
 	* [`street-split`.js](#street-splitjs)
 	* [`fold.css`.js](#foldcssjs)
-5. [Copyright and License](#copyright-and-license)
+3. [Copyright and License](#copyright-and-license)
 
 ## News
 * \[**2024-12-24**\] Uploaded my [**`chess`.js**](#chessjs), **v0.2.1**;
@@ -39,10 +39,6 @@ Many, many years ago I just laughed about JavaScript, because it was just some '
 TODAY, in the times of [`Node.js`](https://nodejs.org/), it's a great language, even for the server side! **;-)**
 
 Every script is made by myself, arose out of necessity.. or because I found it interesting.
-
-> [!NOTE]
-> \[**2024-09-24**\] Moved all this JavaScripts to my new [`JavaScript`](https://github.com/kekse1/javascript/)
-> repo, from the original [`scripts`](https://github.com/kekse1/scripts/);
 
 ### [`dump`.js](https://github.com/kekse1/dump/)
 Got it's own [repository](https://github.com/kekse1/dump/)
