@@ -3,7 +3,7 @@
 ## Index
 1. [News](#news)
 2. [Scripts](#scripts)
-    * [`dump`](#dump)
+    * [`dump`.js](#dumpjs)
 	* [`offset`.js](#offsetjs)
 	* [`clone`.js](#clonejs)
 	* [`config`.js](#configjs)
@@ -41,12 +41,11 @@ TODAY, in the times of [`Node.js`](https://nodejs.org/), it's a great language, 
 Every script is made by myself, arose out of necessity.. or because I found it interesting.
 
 
-<a href="https://github.com/kekse1/dump/">
-<img id="dump" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60dump%60" />
+<a href="https://github.com/kekse1/dump.js/">
+<img id="dumpjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60dump.js%60" />
 </a>
 
-### [`dump`.js](https://github.com/kekse1/dump/)
-Got it's own [repository](https://github.com/kekse1/dump/)
+Got it's own [repository **`dump.js`**](https://github.com/kekse1/dump.js/)
 
 
 <a href="src/offset.js">
