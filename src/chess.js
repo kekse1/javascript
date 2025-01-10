@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
- * https://norbert.com.es/
+ * https://kekse.biz/ https://github.com/kekse1/javascripts/
  * v0.2.1
  *
  * Little toy! ^_^
