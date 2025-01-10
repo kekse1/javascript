@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
  * https://kekse.biz/ https://github.com/kekse1/javascript/
- * v0.7.0
+ * v0.8.0
  *
  * Using a regular `.json` file/structure. But with improved handling.
  *
@@ -25,7 +25,7 @@
 const DEFAULT_DELIM = '.';
 const DEFAULT_FORCE = false;
 const DEFAULT_RESET = false;
-const DEFAULT_COPY = true;
+const DEFAULT_CLONE = true;
 
 //
 import path from 'node:path';
@@ -386,7 +386,7 @@ class Configuration
 
 				if(typeof (r = test(c)) !== 'undefined')
 				{
-					if(DEFAULT_COPY)
+					if(DEFAULT_CLONE)
 					{
 						return Reflect.clone(r);
 					}
@@ -401,7 +401,7 @@ class Configuration
 			case 'force':
 				if(this.isRootPath(_path))
 				{
-					if(DEFAULT_COPY)
+					if(DEFAULT_CLONE)
 					{
 						return Reflect.clone(this.CONFIG);
 					}
@@ -441,6 +441,13 @@ class Configuration
 
 		return false;
 	}
+
+	clone(... _args)
+	{
+		return Reflect.clone(
+			this.force(
+				... _args));
+	}
 	
 	force(_path, _with = true)
 	{
@@ -466,7 +473,7 @@ class Configuration
 			{
 				return this.force(this.getRootPath(), false);
 			}
-			else if(DEFAULT_COPY)
+			else if(DEFAULT_CLONE)
 			{
 				return Reflect.clone(this.CONFIG);
 			}
@@ -495,7 +502,7 @@ class Configuration
 		{
 			const r = ctx[last];
 
-			if(DEFAULT_COPY)
+			if(DEFAULT_CLONE)
 			{
 				return Reflect.clone(r);
 			}
@@ -676,7 +683,7 @@ class Configuration
 
 		const item = result[Math.getIndex(_index, result.length)];
 
-		if(DEFAULT_COPY)
+		if(DEFAULT_CLONE)
 		{
 			return Reflect.clone(item);
 		}

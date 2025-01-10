@@ -23,6 +23,7 @@
 3. [Copyright and License](#copyright-and-license)
 
 ## News
+* \[**2025-01-10**\] Update in my [**`config`.js**](#configjs), to **0.8.0**;
 * \[**2024-12-24**\] Uploaded my [**`chess`.js**](#chessjs), **v0.2.1**;
 * \[**2024-12-13**\] Updated [**`fill`.js**](#filljs), now **v0.1.1**;
 * \[**2024-12-03**\] Created [**`bytes`.js**](#bytesjs), **v0.1.0**;
@@ -83,7 +84,7 @@ extensions are being fully cloned. And even the functions themselves (if `_funct
 <img id="configjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60config.js%60" />
 </a>
 
-* [Version **v0.7.0**](src/config.js) (updated **2024-07-15**)
+* [Version **v0.8.0**](src/config.js) (updated **2025-01-10**)
 
 Using a regular `.json` file/structure. But with improved handling.
 
