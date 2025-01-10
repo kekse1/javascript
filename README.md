@@ -23,13 +23,13 @@
 3. [Copyright and License](#copyright-and-license)
 
 ## News
-* \[**2025-01-10**\] Update in my [**`config`.js**](#configjs), to **0.8.0**;
-* \[**2024-12-24**\] Uploaded my [**`chess`.js**](#chessjs), **v0.2.1**;
-* \[**2024-12-13**\] Updated [**`fill`.js**](#filljs), now **v0.1.1**;
-* \[**2024-12-03**\] Created [**`bytes`.js**](#bytesjs), **v0.1.0**;
-* \[**2024-11-26**\] Created [**`escaping`.js**](#escapingjs), **v0.2.0**;
-* \[**2024-11-25**\] Updated [**`clone`.js**](#clonejs), **v0.5.1**;
-* \[**2024-11-05**\] Updated the new [**`measure`.js**](#measurejs) to **v0.2.1**;
+* \[**2025-01-10**\] Update in my [**`config`.js**](#configjs), to v**0.8.0**;
+* \[**2024-12-24**\] Uploaded my [**`chess`.js**](#chessjs), v**0.2.1**;
+* \[**2024-12-13**\] Updated [**`fill`.js**](#filljs), now v**0.1.1**;
+* \[**2024-12-03**\] Created [**`bytes`.js**](#bytesjs), v**0.1.0**;
+* \[**2024-11-26**\] Created [**`escaping`.js**](#escapingjs), v**0.2.0**;
+* \[**2024-11-25**\] Updated [**`clone`.js**](#clonejs), v**0.5.1**;
+* \[**2024-11-05**\] Updated the new [**`measure`.js**](#measurejs) to v**0.2.1**;
 * \[**2024-09-24**\] **Moved** the [**`offset`.js**](#offsetjs) script to my [new **`utilities`** repository](https://github.com/kekse1/utilities/);
 * \[**2024-09-24**\] Created this repository, to move only the JavaScripts from my [**`scripts` repository**](https://github.com/kekse1/scripts/) to here.
 
@@ -57,7 +57,7 @@ With this script, you can calculate and convert between offsets and lines with c
 or count them, etc. Without any parameter it'll show you the whole countings, and with
 another parameter combination you can even get to know how many columns a specific line has.
 
-* [Version **v1.0.2**](src/offset.js) (updated **2024-10-06**)
+* [Version v**1.0.2**](src/offset.js) (updated **2024-10-06**)
 
 > [!TIP]
 > Start with the argv parameter `--help` or `-?`. ;-)
@@ -67,7 +67,7 @@ another parameter combination you can even get to know how many columns a specif
 <img id="clonejs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60clone.js%60" />
 </a>
 
-* [Version **v0.5.1**](src/clone.js) (updated **2024-11-25**)
+* [Version v**0.5.1**](src/clone.js) (updated **2024-11-25**)
 
 My `Reflect.clone()` extension (because JavaScript doesn't include it natively)..
 
@@ -77,14 +77,14 @@ extensions are being fully cloned. And even the functions themselves (if `_funct
 **no circular dependencies** occure! **;-)**
 
 > [!INFO]
-> Since **v0.5.0** the function also supports any type of `TypedArray`.
+> Since v**0.5.0** the function also supports any type of `TypedArray`.
 
 
 <a href="src/config.js">
 <img id="configjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60config.js%60" />
 </a>
 
-* [Version **v0.8.0**](src/config.js) (updated **2025-01-10**)
+* [Version v**0.8.0**](src/config.js) (updated **2025-01-10**)
 
 Using a regular `.json` file/structure. But with improved handling.
 
@@ -109,7 +109,7 @@ disable/enable smth., even if deeper occurencies enable smth. I needed/wanted th
 You can, btw., init with config object using `{,static} wrap(_object, ..)`;
 or just argue with such a base object in any constructor argument. AND now
 you can also `.extend()` with kinda 'chroot' sub paths (so your query paths
-can start in a sub object).. and now, since **v0.6.0** I also support the
+can start in a sub object).. and now, since v**0.6.0** I also support the
 'step-wise' traversing up the paths. So not only any chroot path, but **every**
 path item (see `Configuration.delim`)!
 
@@ -118,7 +118,7 @@ path item (see `Configuration.delim`)!
 <img id="linksjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60links.js%60" />
 </a>
 
-* [Version **v0.8.3**](src/links.js) (updated **2024-05-02**)
+* [Version v**0.8.3**](src/links.js) (updated **2024-05-02**)
 
 This class extracts all links from `.html` files. It should work better than
 regular expressions, since it covers many possible codes. And this class should
@@ -131,11 +131,11 @@ remain in the result array; you can also instanciate with a `source` param
 or attrib: from which URL this HTML document comes from, so the links are
 adapted to it (relative links could be a problem otherwise).
 
-Since **v0.4.0** also with `DEFAULT_UNIQUE = true`; extra `.extract()` function
+Since v**0.4.0** also with `DEFAULT_UNIQUE = true`; extra `.extract()` function
 (original `.onData()` was meant for stream events); plus some improvements and
-bugs fixed. And more **big changes** since **v0.5.0**.
+bugs fixed. And more **big changes** since v**0.5.0**.
 
-PLUS: since **v0.8.0** it can extract ALL links, not only those from HTML codes;
+PLUS: since v**0.8.0** it can extract ALL links, not only those from HTML codes;
 e.g. `text/plain`; BUT you need (beneath `.all` or `DEFAULT_ALL`) also at least
 one `.scheme[]` item..
 
@@ -146,7 +146,7 @@ Nice one; have phun.
 <img id="bytesjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60bytes.js%60" />
 </a>
 
-* [Version **v0.1.0**](src/bytes.js) (created **2024-12-03**)
+* [Version v**0.1.0**](src/bytes.js) (created **2024-12-03**)
 
 This is radix/base conversion, but only for bytecode (so
 radix/base 256). Here's only the BigInt part, for regular
@@ -160,7 +160,7 @@ on disk or via network transmission, etc.
 <img id="reflectionjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60reflection.js%60" />
 </a>
 
-* [Version **v3.1.0**](src/reflection.js) (updated **2024-09-15**)
+* [Version v**3.1.0**](src/reflection.js) (updated **2024-09-15**)
 
 My solution for JavaScript's `instanceof` problem, so when in multiple environments
 the classes are initialized/declared not once. In this case, comparing two environments,
@@ -172,18 +172,18 @@ and works great). You'll find _more description_ in this [`reflection`.js](src/r
 the starting comment on top of the file.
 
 > [!IMPORTANT]
-> Since **v2.1.0** the additional `was()` parameters (varargs) mean **AND**, **not** **OR** any longer..
-> But the `is()` stayed the same (**OR**);
+> Since v**2.1.0** the additional `was()` parameters (varargs) mean **AND**, **not** **OR**
+> any longer.. but the `is()` stayed the same (**OR**);
 
 > [!TIP]
-> In **v3.1.0** **improved/fixed** `Object.{has,get,set,remove}()`** (traversing functions)!
+> In v**3.1.0** **improved/fixed** `Object.{has,get,set,remove}()`** (traversing functions)!
 
 
 <a href="src/intersect.js">
 <img id="intersectjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60intersect.js%60" />
 </a>
 
-* [Version **v0.2.2**](src/intersect.js) (created **2024-07-07**)
+* [Version v**0.2.2**](src/intersect.js) (created **2024-07-07**)
 
 Intersection for Arrays. Works with any data type (so no optimization like
 binary search possible here), and respects multiple occurences (if no (true)
@@ -196,7 +196,7 @@ is in your arguments).
 <img id="multisetjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60multiset.js%60" />
 </a>
 
-* [Version **v0.2.0**](src/multiset.js) (created **2024-04-30**)
+* [Version v**0.2.0**](src/multiset.js) (created **2024-04-30**)
 
 My `MultiSet` class: extends `Map`, but works like a `Set`, with the difference
 that it also counts the amount of items in this set.
@@ -209,7 +209,7 @@ that it also counts the amount of items in this set.
 String extensions to support C {un,}escaping.
 Example given `\n` is the newline character.
 
-* [Version **v0.2.0**](src/escaping.js) (created **2024-11-26**)
+* [Version v**0.2.0**](src/escaping.js) (created **2024-11-26**)
 
 Supports both escaping and unescaping. The latter will
 produce strings with the encoded values, so `\n` will
@@ -221,7 +221,7 @@ encode the string `\n` out of the `\10` byte code.
 <img id="measurejs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60measure.js%60" />
 </a>
 
-* [Version **v0.2.1**](src/measure.js) (updated **2024-11-05**)
+* [Version v**0.2.1**](src/measure.js) (updated **2024-11-05**)
 
 Two functions to measure the **throughput** of your data, in bytes per second (just
 remove the multiplication with 1000 für milliseconds); and the **ETA** ('Estimated
@@ -248,7 +248,7 @@ then look at my [v4 source code](https://kekse.biz/?~sources)!
 
 Extends the `Date` object with moon phase calculation functions.
 
-* [Version **v0.2.3**](src/moon.js) (created **2024-08-04**)
+* [Version v**0.2.3**](src/moon.js) (created **2024-08-04**)
 
 > [!WARN]
 > MAYBE old version?? For more, partially very useful `Date` extensions take a look (for docs and concrete code):
@@ -262,7 +262,7 @@ Extends the `Date` object with moon phase calculation functions.
 
 I'm a bit embarrassed about this script - it's just so really tiny and nothing..
 
-* [Version **v0.1.1**](src/fill.js) (updated **2024-12-13**)
+* [Version v**0.1.1**](src/fill.js) (updated **2024-12-13**)
 
 But I really needed it one time. Read the description in the comment on top of this file.
 
@@ -274,7 +274,7 @@ But I really needed it one time. Read the description in the comment on top of t
 Little '**toy**'! "Maps" some counted values in a coordinate system,
 so it **draws kinda chess board** .. in your **console**/**terminal**! ;-)
 
-* [Version **v0.2.1**](src/chess.js) (uploaded **2024-12-24**);
+* [Version v**0.2.1**](src/chess.js) (uploaded **2024-12-24**);
 
 ![`example()`](img/chess.png)
 
@@ -285,7 +285,7 @@ so it **draws kinda chess board** .. in your **console**/**terminal**! ;-)
 <img id="street-splitjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60street-split.js%60" />
 </a>
 
-* [Version **v0.2.0**](src/street-split.js) (updated **2024-06-03**)
+* [Version v**0.2.0**](src/street-split.js) (updated **2024-06-03**)
 
 It's merely kinda **proof of concept** that state parsers can be as good as regular expressions, or even better! **;-D**
 See also [**this discussion**](https://www.php.de/forum/webentwicklung/php-einsteiger/1614566-stra%C3%9Fe-und-hausnummer-korrekt-trennen);
@@ -295,7 +295,7 @@ See also [**this discussion**](https://www.php.de/forum/webentwicklung/php-einst
 <img id="foldcssjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60fold.css.js%60" />
 </a>
 
-* [Version **v0.1.0**](src/fold.css.js) (updated **2024-03-04**)
+* [Version v**0.1.0**](src/fold.css.js) (updated **2024-03-04**)
 
 'Folds' CSS style code. Earlier I used the `fold` (Linux) command, but that didn't work that well for what
 I needed the resulting code: had to filter out CSS classes in `.html` code and `grep` for them in many
