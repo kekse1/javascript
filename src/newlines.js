@@ -213,16 +213,7 @@ const onData = (_chunk, _path, _stream) => {
 const onEnd = (_path, _stream) => {
 	if(last !== null)
 	{
-		switch(last)
-		{
-			case 10:
-				++result['\n'];
-				break;
-			case 13:
-				++result['\r'];
-				break;
-		}
-
+		++result[String.fromCharCode(last)];
 		process.stdout.write(output);
 		last = null;
 	}
