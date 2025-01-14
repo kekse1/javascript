@@ -13,10 +13,10 @@ const SUMMARY = {
  * Counts any occurence of various (UNIX, DOS, MAC) newlines
  * if called without additional parameters; as follows:
  *
- * 	-d / --dos
- * 	-u / --unix
- *	-m / --mac
- *	-c / --count // just counts; resets previous format.
+ * 	  -d / --dos
+ * 	  -u / --unix
+ *	  -m / --mac
+ *	[ -c / --count ]
  *
  * They define the optional target format to which the input
  * will be converted to. Optional, and only one of them per
