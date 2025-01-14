@@ -1,6 +1,6 @@
 // 
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
-// https://kekse.biz/ https://github.com/kekse1/javascript/
+// https://kekse.biz/ https://github.com/kekse1/javascripts/
 // v0.2.1
 // 
 // Two functions to measure the throughput of your data, in

@@ -13,6 +13,7 @@
 	* [`intersect`.js](#intersectjs)
 	* [`multiset`.js](#multisetjs)
 	* [`escaping`.js](#escapingjs)
+    * [`newlines`.js](#newlinesjs)
 	* [`measure`.js](#measurejs)
 	* [`animation`.js](#animationjs)
 	* [`moon`.js](#moonjs)
@@ -23,6 +24,7 @@
 3. [Copyright and License](#copyright-and-license)
 
 ## News
+* \[**2025-01-14**\] Created [**`newlines`.js**](#newlinesjs), v**0.1.0**;
 * \[**2025-01-10**\] Update in my [**`config`.js**](#configjs), to v**0.8.0**;
 * \[**2024-12-24**\] Uploaded my [**`chess`.js**](#chessjs), v**0.2.1**;
 * \[**2024-12-13**\] Updated [**`fill`.js**](#filljs), now v**0.1.1**;
@@ -215,6 +217,40 @@ Supports both escaping and unescaping. The latter will
 produce strings with the encoded values, so `\n` will
 become a real newline byte, and the first one will
 encode the string `\n` out of the `\10` byte code.
+
+
+<a href="src/newlines.js">
+<img id="newlinesjs" src="https://kekse.biz/github.php?override=github:javascripts&draw&angle=3&size=28&fg=140,130,20&font=OpenSans&ro&readonly&v=48&h=48&text=%60newlines.js%60" />
+</a>
+
+> [!TIP]
+> Count and/or convert your text files with this little tool
+> (instead of the old `dos2unix` etc.)!
+
+* [Version v**0.1.0**](src/newlines.js) (created **2025-01-14**)
+
+Counts any occurence of various (UNIX, DOS, MAC) newlines
+if called without additional parameters; as follows:
+
+* **`-d / --dos`**
+* **`-u / --unix`**
+* **`-m / --mac`**
+* \[ `-c / --count` \]
+
+They define the optional target format to which the input
+will be converted to. Optional, and only one of them per
+call (last occurence rules).
+
+If `stdin` is being filled, no additional file path parameter
+will be used. Or define any amount of file paths - they get
+used in order. The `-` file is also allowed (also `stdin`).
+
+Files that don't exist or files with open/read errors will
+always throw an exception.
+
+`stdout` is the place where either the count result will be,
+or with enabled conversion `stdout` is the place for the new
+data - `stderr` in this case for the count summary at the end.
 
 
 <a href="src/measure.js">

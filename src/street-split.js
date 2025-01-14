@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
- * https://kekse.biz/ https://github.com/kekse1/javascript/
+ * https://kekse.biz/ https://github.com/kekse1/javascripts/
  * v0.2.0
  *
  * Merely kinda proof of concept that state parsers can be at least as good as regular expressions:

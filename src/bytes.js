@@ -1,6 +1,6 @@
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
- * https://kekse.biz/ https://github.com/kekse1/javascript/
+ * https://kekse.biz/ https://github.com/kekse1/javascripts/
  * v0.1.0
  *
  * This is radix/base conversion, but only for bytecode (so

@@ -1,6 +1,6 @@
 //
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
-// https://kekse.biz/ https://github.com/kekse1/javascript/
+// https://kekse.biz/ https://github.com/kekse1/javascripts/
 // v0.2.0
 //
 // `MultiSet` is like a `Set`, but also counts the items

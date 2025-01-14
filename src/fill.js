@@ -2,7 +2,7 @@
 
 //
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
-// https://kekse.biz/ https://github.com/kekse1/javascript/
+// https://kekse.biz/ https://github.com/kekse1/javascripts/
 // v0.1.1
 //
 // *REALLY* tiny script.. I needed it because "there's no

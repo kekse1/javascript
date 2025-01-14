@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
- * https://kekse.biz/ https://github.com/kekse1/javascript/
+ * https://kekse.biz/ https://github.com/kekse1/javascripts/
  * v1.0.2
  *
  * With this script, you can calculate and convert between offsets and

@@ -1,6 +1,6 @@
 // 
 // Copyright (c) Sebastian Kucharczyk <kuchen@kekse.biz>
-// https://kekse.biz/ https://github.com/kekse1/javascript/
+// https://kekse.biz/ https://github.com/kekse1/javascripts/
 // v0.5.1
 // 
 // Just a tiny function to *really* clone objects (etc.); .. with all types, not only JSON supported ones
