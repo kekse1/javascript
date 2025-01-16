@@ -21,7 +21,8 @@
 	* [`chess`.js](#chessjs)
 	* [`street-split`.js](#street-splitjs)
 	* [`fold.css`.js](#foldcssjs)
-3. [Copyright and License](#copyright-and-license)
+3. [Contact](#contact)
+4. [Copyright and License](#copyright-and-license)
 
 ## News
 * \[**2025-01-14**\] Created [**`newlines`.js**](#newlinesjs), v**0.1.0**;
@@ -344,6 +345,9 @@ but the code is/was a mess!
 
 > [!IMPORTANT]
 > Early version, so only the real basics are covered.
+
+# Contact
+<img src="https://kekse.biz/github.php?override=github:javascripts&draw&text=kuchen@kekse.biz&angle=6&size=24px&fg=150,20,90&font=OpenSans&ro&readonly&h=64&v=16" />
 
 # Copyright and License
 The Copyright is [(c) Sebastian Kucharczyk](./COPYRIGHT.txt),
