@@ -347,7 +347,7 @@ but the code is/was a mess!
 > Early version, so only the real basics are covered.
 
 # Contact
-<img src="https://kekse.biz/github.php?override=github:javascripts&draw&text=kuchen@kekse.biz&angle=6&size=24px&fg=150,20,90&font=OpenSans&ro&readonly&h=64&v=16" />
+<img src="https://kekse.biz/github.php?override=github:javascripts&draw&text=javascripts@kekse.biz&angle=6&size=38pt&fg=150,20,90&font=OpenSans&ro&readonly&h=64&v=16" />
 
 # Copyright and License
 The Copyright is [(c) Sebastian Kucharczyk](./COPYRIGHT.txt),
